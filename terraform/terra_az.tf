@@ -205,7 +205,7 @@ resource "azurerm_virtual_machine_extension" "vm_extension_install_iis" {
 
   settings = <<SETTINGS
     {
-	"fileUris": ["https://raw.githubusercontent.com/nishantswo/kforce/main/cats.jpg", "https://raw.githubusercontent.com/nishantswo/kforce/main/index.html", "https://raw.githubusercontent.com/nishantswo/kforce/main/script.ps1"],
+	"fileUris": ["https://raw.githubusercontent.com/nishantswo/kforce/main/terraform/cats.jpg", "https://raw.githubusercontent.com/nishantswo/kforce/main/terraform/index.html", "https://raw.githubusercontent.com/nishantswo/kforce/main/terraform/script.ps1"],
     "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File script.ps1"
     }
 SETTINGS 
