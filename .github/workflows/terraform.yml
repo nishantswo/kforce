@@ -1,38 +1,51 @@
-name: Terraform Apply
-
-on: [workflow_dispatch]
-
-defaults:
-  run:
-    working-directory: ./kforce
-
+name: 'Terraform'
+ 
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+ 
 jobs:
   terraform:
-    runs-on: ubuntu-latest
-
+    name: 'Terraform'
     env:
       subscriptionid: ${{ secrets.CLIENTID }}
       clientid: ${{ secrets.CLIENTSECRET }}
       clientsecret: ${{ secrets.SUBSCRIPTIONID }}
       tenantid: ${{ secrets.TENANTID }}
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-
-      - name: Terraform Init
-        run: terraform init
-        
-      - name: Terraform Validate
-        run: terraform validate
-
-      - name: Terraform Plan
-        run: terraform plan
-        
-      - name: Terraform Apply
-        run: terraform apply --auto-approve
-
-
+    runs-on: ubuntu-latest
+    environment: production
  
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
+ 
+    steps:
+    # Checkout the repository to the GitHub Actions runner
+    - name: Checkout
+      uses: actions/checkout@v2
+
+         
+    - name: 'Terraform Init'
+      uses: hashicorp/terraform-github-actions@master
+      with:
+        tf_actions_version: 1.44.0
+        tf_actions_subcommand: 'init'
+        tf_actions_working_dir: "./terraform"
+   
+    - name: 'Terraform Plan'
+      uses: hashicorp/terraform-github-actions@master
+      with:
+        tf_actions_version: 1.44.0
+        tf_actions_subcommand: 'plan'
+        tf_actions_working_dir: "./terraform"
+ 
+    - name: Terraform Apply
+      if: github.ref == 'refs/heads/main'
+      uses: hashicorp/terraform-github-actions@master
+      with:
+        tf_actions_version: 1.44.0
+        tf_actions_subcommand: 'apply'
+        tf_actions_working_dir: "./terraform"
