@@ -12,3 +12,8 @@ mkdir C:\cats
 Export-PfxCertificate -FilePath "C:\inetpub\temp\temp.pfx" -Cert $certificatePath -Password $securedString
 Import-PfxCertificate -FilePath "C:\inetpub\temp\temp.pfx" -CertStoreLocation "Cert:\LocalMachine\Root" -Password $securedString
 New-IISSite -Name "CatsSite" -PhysicalPath "C:\cats" -BindingInformation $bindingInformation -CertificateThumbPrint $thumbPrint -CertStoreLocation $storeLocation -Protocol https
+$file = "C:\Windows\System32\drivers\etc\hosts"
+$hostfile = Get-Content $file
+$hostfile += "10.25.1.4   cats.internet.local"
+$hostfile += "10.25.1.5   cats.internet.local"
+Set-Content -Path $file -Value $hostfile -Force
