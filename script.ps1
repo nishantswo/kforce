@@ -1,4 +1,6 @@
 # powershell -ExecutionPolicy Unrestricted Install-WindowsFeature -Name Web-Server -IncludeAllSubFeature -IncludeManagementTools
+cp cats.jpg C:\cats
+cp index.html C:\cats
 $password = "Wind0wsazure" 
 $hostName = "cats.internet.local"
 $port = "443"
