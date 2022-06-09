@@ -11,10 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      subscriptionid: ${{ secrets.CLIENTID }}
-      clientid: ${{ secrets.CLIENTSECRET }}
-      clientsecret: ${{ secrets.SUBSCRIPTIONID }}
-      tenantid: ${{ secrets.TENANTID }}
+    
+      ARM_CLIENT_ID: ${{ secrets.CLIENTID }}
+      ARM_CLIENT_SECRET: ${{ secrets.CLIENTSECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTIONID }}
+      ARM_TENANT_ID: ${{ secrets.TENANTID }} 
 
     steps:
       - uses: actions/checkout@v2
