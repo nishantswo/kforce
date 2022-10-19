@@ -45,14 +45,26 @@ The following resources have been provisioned as part of the deployment
 
 ## Prerequisite
 
+<table>
+<tr>
+<td>
+
 1. Install latest terraform.
 2. Install latest python.
 3. You need to set common variables in both the policies. follow these names `azure_subscription_id`, `azure_client_id`, `azure_client_secret`, `azure_tenant_id`, `ARM_LOCATION` which is a service principal, because terraform uses it to access the subscription and create resources. \
+  
+</td>
+</tr>
+</table>
 
 ![-----------------------------------------------------](/rainbow.png)
 
 ## Resources
 
+<table>
+<tr>
+<td>
+  
 ## DINE
 
 `DINE` => Python file which will generate terraform files based on parameters from CSV file.
@@ -76,32 +88,42 @@ The following resources have been provisioned as part of the deployment
 `Policy-Definition-Deny` => this contains code for denying the private dns zone creation.
 
 `provider` => this contains terraform & azure provider versions.
-
+</td>
+</tr>
+</table>
 
 ![-----------------------------------------------------](/rainbow.png)
 
+  
 ## Deployment
+  
+<table>
+<tr>
+<td>
 
 1. Populate the csv file with the required parameters for DINE & DENY policies.
 2. You need to run python next which will feed values from excel and create terraform files described in section resources
 
 3. After the terraform files are created, You need to initiaize your terraform backend by navigating to the working directory and running below command
 
-   ```bash
-   terraform init
-   ```
+```bash
+terraform init
+```
 
    then, run plan to check the current state and determine deltas if any with `-var-file`.
 
-   ```bash
-   terraform plan -var-file="Instance-Dev.tfvars"
-   ```
+```bash
+terraform plan -var-file="Instance-Dev.tfvars"
+```
   
   finally run apply to create the resources with `-var-file`.
    
-   ```bash
-   terraform apply -var-file="Instance-Dev.tfvars"
-   ```
+```bash
+terraform apply -var-file="Instance-Dev.tfvars"
+```
+</td>
+</tr>
+</table>
 
 ![-----------------------------------------------------](/rainbow.png)
 
