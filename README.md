@@ -71,9 +71,13 @@ The following resources have been provisioned as part of the deployment
 ## DENY
 
 `DINE` => Python file which will generate terraform files based on parameters from CSV file.
+
 `Instance-Dev` => this contains parameters to be passed to variables.
+
 `variables` => this contains variables to be passed to policy definition.
+
 `Policy-Definition-Deny` => this contains code for denying the private dns zone creation.
+
 `provider` => this contains terraform & azure provider versions.
 
 
