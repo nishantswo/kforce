@@ -59,9 +59,13 @@ The following resources have been provisioned as part of the deployment
 ## DINE
 
 `DINE` => Python file which will generate terraform files based on parameters from CSV file.
+
 `Instance-Dev` => this contains parameters to be passed to variables.
+
 `variables` => this contains variables to be passed to policy definition.
+
 `Policy-Definition-DINE` => this contains code for creating the private dns zone groups.
+
 `provider` => this contains terraform & azure provider versions.
 
 ## DENY
@@ -87,10 +91,15 @@ The following resources have been provisioned as part of the deployment
    terraform init
    ```
 
-   then, plan & apply with `-var-file`.
+   then, run plan to check the current state and determine deltas if any with `-var-file`.
 
    ```bash
    terraform plan -var-file="Instance-Dev.tfvars"
+   ```
+  
+  finally run apply to create the resources with `-var-file`.
+   
+   ```bash
    terraform apply -var-file="Instance-Dev.tfvars"
    ```
 
