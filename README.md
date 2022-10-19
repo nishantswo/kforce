@@ -52,7 +52,7 @@ The following resources have been provisioned as part of the deployment
 
    ```
 
-![-----------------------------------------------------](.rainbow.png)
+![-----------------------------------------------------](/rainbow.png)
 
 ## resources
 
@@ -73,7 +73,7 @@ The following resources have been provisioned as part of the deployment
 `provider` => this contains terraform & azure provider versions.
 
 
-![-----------------------------------------------------](.github/workflows/rainbow.png)
+![-----------------------------------------------------](/rainbow.png)
 
 ## Deployment
 
@@ -94,5 +94,5 @@ The following resources have been provisioned as part of the deployment
    terraform apply -var-file="Instance-Dev.tfvars"
    ```
 
-![-----------------------------------------------------](.github/workflows/rainbow.png)
+![-----------------------------------------------------](/rainbow.png)
 
