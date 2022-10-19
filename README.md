@@ -8,7 +8,6 @@
   <a href="#prerequisite">Prerequisite</a> •
   <a href="#resources">Create | Modify Resources</a> •
   <a href="#deployment">Deployment</a> •
-  <a href="#features">Features</a> •
 
 </p>
 
