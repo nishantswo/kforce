@@ -52,7 +52,7 @@ The following resources have been provisioned as part of the deployment
 
    ```
 
-![-----------------------------------------------------](.github/workflows/rainbow.png)
+![-----------------------------------------------------](.rainbow.png)
 
 ## resources
 
