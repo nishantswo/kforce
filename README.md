@@ -51,7 +51,7 @@ The following resources have been provisioned as part of the deployment
 
 ![-----------------------------------------------------](/rainbow.png)
 
-## resources
+## Resources
 
 ## DINE
 
